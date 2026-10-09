@@ -5,21 +5,20 @@
     //     return cart
     // }
 
-function addItem(cart, item, quantity) {
+function addItem(cart) {
+    const item = Object.keys(cart)[0];
+    const quantity = cart[item];
+
     if (quantity > 0) {
-        cart[item] = quantity;
         return cart;
-    } else {
-    return {};
     }
+
+    return {};
 }
 //remove items
-function removeItem(cart, item){
-    const rem = cart.indexOf(cartItem => cartItem.name === item)
-    if (rem !== -1){
-        cart.splice(rem, 1);
-    }
-    return cart
+function removeItem(cart, item) {
+    delete cart[item];
+    return cart;
 }
 //total items
 function getTotalItems(cart){
@@ -30,6 +29,7 @@ function getTotalItems(cart){
     return total
 }
 
+module.exports = {addItem, removeItem, getTotalItems}
 module.exports = {addItem, removeItem, getTotalItems}
 
 // let myCart = []
