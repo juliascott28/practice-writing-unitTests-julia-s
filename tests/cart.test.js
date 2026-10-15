@@ -1,11 +1,10 @@
-const { describe } = require('yargs');
 const myCart = require('../cart.js');
 
 //*addItem*
-describe('addItem', function(){
+describe('addItem', () => {
     //positive
     test('Should add item to cart when given item and quantity',
-        function(){
+        () => {
             expect(myCart.addItem({'apple': 1})).toEqual({'apple': 1})
         }
     )
@@ -32,13 +31,13 @@ describe('removeItem', function(){
 })
 
 //*totalItem*
-    //positive
 describe('totalItem', function(){
+        //positive
     test('Should return total items in array', function(){
-        expect(myCart.getTotalItems().toBe({'apple': 1}))
+        let cart = [{item: 'apple', quantity: 1}]
+        expect(myCart.getTotalItems(cart)).toBe(1)
     })
-}
-)
+})
     //negative
 
     //edge

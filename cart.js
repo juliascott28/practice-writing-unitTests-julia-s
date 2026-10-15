@@ -30,7 +30,6 @@ function getTotalItems(cart){
 }
 
 module.exports = {addItem, removeItem, getTotalItems}
-module.exports = {addItem, removeItem, getTotalItems}
 
 // let myCart = []
 // let add = addItem(myCart, "apple", 3)
